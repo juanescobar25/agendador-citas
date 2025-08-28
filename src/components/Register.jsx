@@ -27,7 +27,7 @@ const Register = () => {
     const handleSubmit = async (e) =>{
         e.preventDefault()
         try {
-            const res = await axios.get(`api/Usuarios?Documento=${form.Documento}&correo=${form.correo}`)
+            const res = await axios.get(`http://localhost:3001/Usuarios?Documento=${form.Documento}&correo=${form.correo}`)
 
             if (res.data.length > 0) {
                 Swal.fire({
@@ -38,7 +38,7 @@ const Register = () => {
                 return;
             }    
 
-            await axios.post('api/Usuarios',{
+            await axios.post('http://localhost:3001/Usuarios',{
                 id: Number(form.Documento),
                 nombre: form.nombre,
                 correo: form.correo,

@@ -27,7 +27,7 @@ function Usuarios() {
     }, []);
 
     const fetchUsuarios = async () => {
-        const res = await axios.get("http://localhost:3000/Usuarios");
+        const res = await axios.get("http://localhost:3001/Usuarios");
         setUsuarios(res.data);
     };
 
@@ -41,7 +41,7 @@ function Usuarios() {
             cancelButtonText: "Cancelar"
         });
         if (confirm.isConfirmed) {
-            await axios.delete(`http://localhost:3000/Usuarios/${String(id)}`);
+            await axios.delete(`http://localhost:3001/Usuarios/${String(id)}`);
             fetchUsuarios();
             Swal.fire("Eliminado", "El usuario ha sido eliminado.", "success");
         }
