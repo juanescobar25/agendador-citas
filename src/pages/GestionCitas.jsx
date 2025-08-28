@@ -33,12 +33,12 @@ const GestionCitas = () => {
     }, []);
 
     const fetchCitas = async () => {
-        const res = await axios.get("api/Citas");
+        const res = await axios.get("http://localhost:3000/Citas");
         setCitas(res.data);
     };
 
     const fetchUsuarios = async () => {
-        const res = await axios.get("api/Usuarios");
+        const res = await axios.get("http://localhost:3000/Usuarios");
         setUsuarios(res.data);
     };
 
@@ -93,7 +93,7 @@ const GestionCitas = () => {
             return;
         }
 
-        await axios.put(`api/Citas/${String(editCita)}`, {
+        await axios.put(`http://localhost:3000/Citas/${String(editCita)}`, {
             ...form,
             id: String(editCita)
         });
@@ -150,7 +150,7 @@ const GestionCitas = () => {
             return;
         }
 
-        await axios.post("api/Citas", {
+        await axios.post("http://localhost:3000/Citas", {
             ...newCita,
             id: String(Date.now())
         });

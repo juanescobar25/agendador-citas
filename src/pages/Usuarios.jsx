@@ -27,7 +27,7 @@ function Usuarios() {
     }, []);
 
     const fetchUsuarios = async () => {
-        const res = await axios.get("api/Usuarios");
+        const res = await axios.get("http://localhost:3000/Usuarios");
         setUsuarios(res.data);
     };
 
@@ -41,7 +41,7 @@ function Usuarios() {
             cancelButtonText: "Cancelar"
         });
         if (confirm.isConfirmed) {
-            await axios.delete(`api/Usuarios/${String(id)}`);
+            await axios.delete(`http://localhost:3000/Usuarios/${String(id)}`);
             fetchUsuarios();
             Swal.fire("Eliminado", "El usuario ha sido eliminado.", "success");
         }
@@ -67,7 +67,7 @@ function Usuarios() {
 
     const handleUpdate = async (e) => {
         e.preventDefault();
-        await axios.put(`api/Usuarios/${String(editUser)}`, {
+        await axios.put(`http://localhost:3000/Usuarios/${String(editUser)}`, {
             ...form,
             id: String(editUser)
         });
@@ -115,7 +115,7 @@ function Usuarios() {
             Swal.fire("Error", "Ya existe un usuario con ese documento", "error");
             return;
         }
-        await axios.post("api/Usuarios", {
+        await axios.post("http://localhost:3000/Usuarios", {
             ...newUser,
             id: String(newUser.Documento)
         });

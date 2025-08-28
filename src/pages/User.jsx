@@ -13,7 +13,7 @@ function User() {
     }, []);
 
     const fetchCitas = async () => {
-        const res = await axios.get("api/Citas");
+        const res = await axios.get("http://localhost:3000/Citas");
         setCitas(res.data);
     };
 

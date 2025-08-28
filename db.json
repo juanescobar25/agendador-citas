@@ -1,38 +1,6 @@
 {
   "Usuarios": [
     {
-      "nombre": "Juan",
-      "correo": "juanescobardavid2007@gmail.com",
-      "Documento": "1032012528",
-      "Contraseña": "Juan.1032",
-      "rol": "Administrador",
-      "id": "1032012528"
-    },
-    {
-      "nombre": "Consuelo",
-      "correo": "consul@gmail.com",
-      "Documento": "21686338",
-      "Contraseña": "1234",
-      "rol": "Cliente",
-      "id": "21686338"
-    },
-    {
-      "id": "2168633",
-      "nombre": "Sandra",
-      "correo": "sandra@gmail.com",
-      "Documento": "2168633",
-      "Contraseña": "12345",
-      "rol": "Cliente"
-    },
-    {
-      "id": "10101010",
-      "nombre": "Caro",
-      "correo": "caro@gmail.com",
-      "Documento": "10101010",
-      "Contraseña": "123456",
-      "rol": "Administrador"
-    },
-    {
       "id": 43603658,
       "nombre": "Damaris",
       "correo": "damaris@gmail.com",
