@@ -1,0 +1,65 @@
+{
+  "Usuarios": [
+    {
+      "nombre": "Juan",
+      "correo": "juanescobardavid2007@gmail.com",
+      "Documento": "1032012528",
+      "Contraseña": "Juan.1032",
+      "rol": "Administrador",
+      "id": "1032012528"
+    },
+    {
+      "nombre": "Consuelo",
+      "correo": "consul@gmail.com",
+      "Documento": "21686338",
+      "Contraseña": "1234",
+      "rol": "Cliente",
+      "id": "21686338"
+    },
+    {
+      "id": "2168633",
+      "nombre": "Sandra",
+      "correo": "sandra@gmail.com",
+      "Documento": "2168633",
+      "Contraseña": "12345",
+      "rol": "Cliente"
+    },
+    {
+      "id": "10101010",
+      "nombre": "Caro",
+      "correo": "caro@gmail.com",
+      "Documento": "10101010",
+      "Contraseña": "123456",
+      "rol": "Administrador"
+    },
+    {
+      "id": 43603658,
+      "nombre": "Damaris",
+      "correo": "damaris@gmail.com",
+      "Contraseña": "12",
+      "rol": "Administrador"
+    }
+  ],
+  "Citas": [
+    {
+      "id": "1756387391646",
+      "nombre": "Cita__Pagos",
+      "fecha": "2025-08-29",
+      "hora": "10:00",
+      "lugar": "Industriales",
+      "descripcion": "Recibir mi pago",
+      "usuarioId": "21686338",
+      "Administrador": "Juan"
+    },
+    {
+      "id": "1756389720943",
+      "nombre": "Cita__Cuentas",
+      "fecha": "2025-08-28",
+      "hora": "12:00",
+      "lugar": "Santa fe",
+      "descripcion": "Crear una nueva cuenta",
+      "usuarioId": "2168633",
+      "Administrador": "Caro"
+    }
+  ]
+}

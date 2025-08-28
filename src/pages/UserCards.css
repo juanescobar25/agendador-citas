@@ -1,0 +1,44 @@
+.user-cards-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem 0;
+}
+.user-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1.5rem;
+    min-width: 320px;
+    max-width: 400px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+.user-card h2 {
+    margin-top: 0;
+    color: #007bff;
+    text-align: center;
+}
+.user-cita-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #f8f9fa;
+}
+.user-cita-card h3 {
+    margin: 0 0 0.5rem 0;
+}
+.user-cita-card button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background 0.2s;
+}
+.user-cita-card button:hover {
+    background: #0056b3;
+}

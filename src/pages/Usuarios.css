@@ -1,0 +1,95 @@
+.usuarios-container {
+    padding: 2rem;
+    background: #f8f9fa;
+    min-height: 100vh;
+}
+
+.usuarios-container h1 {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.usuarios-table-container {
+    overflow-x: auto;
+}
+
+.usuarios-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.usuarios-table th,
+.usuarios-table td {
+    border: 1px solid #ddd;
+    padding: 0.7rem 1rem;
+    text-align: left;
+}
+
+.usuarios-table th {
+    background: #007bff;
+    color: #fff;
+    font-weight: 600;
+}
+
+.usuarios-table tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+.usuarios-table tr:hover {
+    background: #e9ecef;
+}
+
+.usuarios-table input,
+.usuarios-table select {
+    width: 100%;
+    padding: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.usuarios-table button {
+    margin-right: 0.5rem;
+    padding: 0.3rem 0.8rem;
+    border: none;
+    border-radius: 4px;
+    background: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.usuarios-table button:last-child {
+    background: #dc3545;
+}
+
+.usuarios-table button:hover {
+    opacity: 0.85;
+}
+
+/* Agrega esto a Usuarios.css */
+.usuarios-form-nuevo {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+.usuarios-form-nuevo input,
+.usuarios-form-nuevo select {
+    padding: 0.3rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.usuarios-form-nuevo button {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.3rem 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.usuarios-form-nuevo button:hover {
+    background: #218838;
+}

@@ -1,0 +1,31 @@
+.card-admin {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1rem;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+.card-admin:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.card-admin-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+.card-admin-title {
+    font-size: 1.3rem;
+    margin: 0.5rem 0;
+}
+.card-admin-description {
+    color: #555;
+    font-size: 1rem;
+}
+.cards-admin-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
