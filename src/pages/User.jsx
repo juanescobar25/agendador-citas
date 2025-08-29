@@ -13,13 +13,13 @@ function User() {
     }, []);
 
     const fetchCitas = async () => {
-        const res = await axios.get("http://localhost:3001/Citas");
+        const res = await axios.get("https://json-backend-j0dm.onrender.com/Citas");
         setCitas(res.data);
     };
 
     // Tomar una cita disponible
     const tomarCita = async (cita) => {
-        await axios.put(`api/Citas/${cita.id}`, {
+        await axios.put(`https://json-backend-j0dm.onrender.com/Citas/${cita.id}`, {
             ...cita,
             usuarioId: usuario.id
         });
@@ -29,7 +29,7 @@ function User() {
 
     // Liberar una cita agendada
     const liberarCita = async (cita) => {
-        await axios.put(`api/Citas/${cita.id}`, {
+        await axios.put(`https://json-backend-j0dm.onrender.com/Citas/${cita.id}`, {
             ...cita,
             usuarioId: ""
         });

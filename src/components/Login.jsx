@@ -35,7 +35,7 @@ const Login = () => {
         }
 
         try {
-            const res = await axios.get(`http://localhost:3001/Usuarios?nombre=${form.nombre}&Contraseña=${form.Contraseña}&rol=${form.rol}`)
+            const res = await axios.get(`https://json-backend-j0dm.onrender.com/Usuarios?nombre=${form.nombre}&Contraseña=${form.Contraseña}&rol=${form.rol}`)
 
             if(res.data.length > 0){
                 const token = Math.random().toString(36).substring(2)

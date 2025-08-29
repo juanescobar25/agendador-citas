@@ -27,7 +27,7 @@ const Register = () => {
     const handleSubmit = async (e) =>{
         e.preventDefault()
         try {
-            const res = await axios.get(`http://localhost:3001/Usuarios?Documento=${form.Documento}&correo=${form.correo}`)
+            const res = await axios.get(`https://json-backend-j0dm.onrender.com/Usuarios?Documento=${form.Documento}&correo=${form.correo}`)
 
             if (res.data.length > 0) {
                 Swal.fire({
@@ -38,10 +38,11 @@ const Register = () => {
                 return;
             }    
 
-            await axios.post('http://localhost:3001/Usuarios',{
+            await axios.post('https://json-backend-j0dm.onrender.com/Usuarios',{
                 id: Number(form.Documento),
                 nombre: form.nombre,
                 correo: form.correo,
+                Documento: form.Documento,
                 Contraseña: form.Contraseña,
                 rol:form.rol
             })

@@ -52,7 +52,7 @@ const HeaderAdmin = () => {
                                 </tr>
                                 <tr>
                                     <td><strong>Documento:</strong></td>
-                                    <td>{usuario.Documento}</td>
+                                    <td>{usuario.id}</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Rol:</strong></td>

@@ -27,7 +27,7 @@ function Usuarios() {
     }, []);
 
     const fetchUsuarios = async () => {
-        const res = await axios.get("http://localhost:3001/Usuarios");
+        const res = await axios.get("https://json-backend-j0dm.onrender.com/Usuarios");
         setUsuarios(res.data);
     };
 
@@ -41,7 +41,7 @@ function Usuarios() {
             cancelButtonText: "Cancelar"
         });
         if (confirm.isConfirmed) {
-            await axios.delete(`http://localhost:3001/Usuarios/${String(id)}`);
+            await axios.delete(`https://json-backend-j0dm.onrender.com/Usuarios/${String(id)}`);
             fetchUsuarios();
             Swal.fire("Eliminado", "El usuario ha sido eliminado.", "success");
         }
@@ -67,7 +67,7 @@ function Usuarios() {
 
     const handleUpdate = async (e) => {
         e.preventDefault();
-        await axios.put(`http://localhost:3000/Usuarios/${String(editUser)}`, {
+        await axios.put(`https://json-backend-j0dm.onrender.com/Usuarios/${String(editUser)}`, {
             ...form,
             id: String(editUser)
         });
@@ -115,7 +115,7 @@ function Usuarios() {
             Swal.fire("Error", "Ya existe un usuario con ese documento", "error");
             return;
         }
-        await axios.post("http://localhost:3000/Usuarios", {
+        await axios.post("https://json-backend-j0dm.onrender.com/Usuarios", {
             ...newUser,
             id: String(newUser.Documento)
         });

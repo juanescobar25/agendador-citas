@@ -10,7 +10,7 @@ const Reportes = () => {
     }, []);
 
     const fetchCitas = async () => {
-        const res = await axios.get("http://localhost:3001/Citas");
+        const res = await axios.get("https://json-backend-j0dm.onrender.com/Citas");
         setCitas(res.data);
     };
 

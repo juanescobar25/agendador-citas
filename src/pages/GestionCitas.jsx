@@ -25,6 +25,7 @@ const GestionCitas = () => {
         usuarioId: "",
         Administrador: ""
     });
+    const [soloDisponibles, setSoloDisponibles] = useState(false);
     const [busqueda, setBusqueda] = useState("");
 
     useEffect(() => {
@@ -33,12 +34,12 @@ const GestionCitas = () => {
     }, []);
 
     const fetchCitas = async () => {
-        const res = await axios.get("http://localhost:3001/Citas");
+        const res = await axios.get("https://json-backend-j0dm.onrender.com/Citas");
         setCitas(res.data);
     };
 
     const fetchUsuarios = async () => {
-        const res = await axios.get("http://localhost:3001/Usuarios");
+        const res = await axios.get("https://json-backend-j0dm.onrender.com/Usuarios");
         setUsuarios(res.data);
     };
 
@@ -52,7 +53,7 @@ const GestionCitas = () => {
             cancelButtonText: "Cancelar"
         });
         if (confirm.isConfirmed) {
-            await axios.delete(`api/Citas/${String(id)}`);
+            await axios.delete(`https://json-backend-j0dm.onrender.com/Citas/${String(id)}`);
             fetchCitas();
             Swal.fire("Eliminado", "La cita ha sido eliminada.", "success");
         }
@@ -93,7 +94,7 @@ const GestionCitas = () => {
             return;
         }
 
-        await axios.put(`http://localhost:3000/Citas/${String(editCita)}`, {
+        await axios.put(`https://json-backend-j0dm.onrender.com/Citas/${String(editCita)}`, {
             ...form,
             id: String(editCita)
         });
@@ -150,7 +151,7 @@ const GestionCitas = () => {
             return;
         }
 
-        await axios.post("http://localhost:3000/Citas", {
+        await axios.post("https://json-backend-j0dm.onrender.com/Citas", {
             ...newCita,
             id: String(Date.now())
         });
@@ -173,8 +174,9 @@ const GestionCitas = () => {
 
     // Lógica para filtrar citas por búsqueda
     const citasFiltradas = citas.filter(cita => {
-        const usuarioNombre = usuarios.find(u => String(u.id) === String(cita.usuarioId))?.nombre || "";
-        return usuarioNombre.toLowerCase().includes(busqueda.toLowerCase());
+        const coincideBusqueda = cita.nombre.toLowerCase().includes(busqueda.toLowerCase());
+        const esDisponible = !cita.usuarioId;
+        return coincideBusqueda && (!soloDisponibles || esDisponible);
     });
 
     return (
@@ -240,13 +242,23 @@ const GestionCitas = () => {
             </form>
 
             {/* Buscador */}
-            <input
-                type="text"
-                placeholder="Buscar por nombre de usuario"
-                value={busqueda}
-                onChange={e => setBusqueda(e.target.value)}
-                style={{marginBottom: "1rem", padding: "0.4rem", borderRadius: "5px", border: "1px solid #ccc"}}
-            />
+            <div style={{display: "flex", gap: "1rem", alignItems: "center", marginBottom: "1rem"}}>
+                <input
+                    type="text"
+                    placeholder="Buscar por nombre de cita"
+                    value={busqueda}
+                    onChange={e => setBusqueda(e.target.value)}
+                    style={{padding: "0.4rem", borderRadius: "5px", border: "1px solid #ccc"}}
+                />
+                <label>
+                    <input
+                        type="checkbox"
+                        checked={soloDisponibles}
+                        onChange={e => setSoloDisponibles(e.target.checked)}
+                    />
+                    Mostrar solo citas disponibles
+                </label>
+            </div>
 
             <div className="usuarios-table-container">
                 <table className="usuarios-table">
